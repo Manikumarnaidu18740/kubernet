@@ -1,3 +1,7 @@
+FROM centos:7
+
+MAINTAINER manikumarnaidu18740@gmail.com
+
 # Install required packages
 RUN yum install -y httpd zip unzip && \
     yum clean all
