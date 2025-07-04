@@ -1,0 +1,14 @@
+- name: Deploy Kubernetes Resources
+  hosts: node
+  become: true
+  tasks:
+    - name: Apply Kubernetes Deployment
+      ansible.builtin.command: kubectl apply -f /home/ubuntu/Deployment.yml
+      args:
+        chdir: /home/ubuntu/
+
+    - name: Apply Kubernetes Service
+      ansible.builtin.command: kubectl apply -f /home/ubuntu/Service.yml
+      args:
+        chdir: /home/ubuntu/
+
